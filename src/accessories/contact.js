@@ -41,12 +41,12 @@ class ContactAccessory {
       );
     }
 
-    let batteryService = this.accessory.getService(this.api.hap.Service.BatteryService);
+    let batteryService = this.accessory.getService(this.api.hap.Service.Battery);
 
     if (!this.accessory.context.config.noBattery && this.accessory.context.config.type === 'HEATING') {
       if (!batteryService) {
         Logger.info('Adding Battery service', this.accessory.displayName);
-        batteryService = this.accessory.addService(this.api.hap.Service.BatteryService);
+        batteryService = this.accessory.addService(this.api.hap.Service.Battery);
       }
       batteryService.setCharacteristic(
         this.api.hap.Characteristic.ChargingState,

@@ -44,12 +44,12 @@ class ThermostatAccessory {
       );
     }
 
-    let batteryService = this.accessory.getService(this.api.hap.Service.BatteryService);
+    let batteryService = this.accessory.getService(this.api.hap.Service.Battery);
 
     if (!this.accessory.context.config.noBattery) {
       if (!batteryService) {
         Logger.info('Adding Battery service', this.accessory.displayName);
-        batteryService = this.accessory.addService(this.api.hap.Service.BatteryService);
+        batteryService = this.accessory.addService(this.api.hap.Service.Battery);
       }
       batteryService.setCharacteristic(
         this.api.hap.Characteristic.ChargingState,
@@ -130,8 +130,8 @@ class ThermostatAccessory {
           ? 30
           : 86
         : this.accessory.context.config.temperatureUnit === 'CELSIUS'
-        ? 5
-        : 41;
+          ? 5
+          : 41;
 
     let maxValue =
       this.accessory.context.config.type === 'HOT_WATER'
@@ -139,8 +139,8 @@ class ThermostatAccessory {
           ? 65
           : 149
         : this.accessory.context.config.temperatureUnit === 'CELSIUS'
-        ? 25
-        : 77;
+          ? 25
+          : 77;
 
     minValue = this.accessory.context.config.minValue < maxValue ? this.accessory.context.config.minValue : minValue;
 
@@ -148,9 +148,9 @@ class ThermostatAccessory {
 
     let minStep = parseFloat(
       (this.accessory.context.config.minStep &&
-      !isNaN(this.accessory.context.config.minStep) &&
-      this.accessory.context.config.minStep > 0 &&
-      this.accessory.context.config.minStep <= 1
+        !isNaN(this.accessory.context.config.minStep) &&
+        this.accessory.context.config.minStep > 0 &&
+        this.accessory.context.config.minStep <= 1
         ? parseFloat(this.accessory.context.config.minStep)
         : 1
       ).toFixed(2)
