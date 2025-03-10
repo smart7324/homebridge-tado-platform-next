@@ -42,7 +42,7 @@
   ],
   "engines": {
     "node": ">=12.18.3",
-    "homebridge": "^1.1.6"
+    "homebridge": "^1.1.6||^2.0.0-alpha"
   },
   "dependencies": {
     "@homebridge/plugin-ui-utils": "^0.0.19",
