@@ -235,14 +235,16 @@ class ThermostatAccessory {
     service
       .getCharacteristic(this.api.hap.Characteristic.TargetTemperature)
       .onSet((value) => {
-        let tempUnit = service.getCharacteristic(this.api.hap.Characteristic.TemperatureDisplayUnits).value;
-
-        let cToF = (c) => Math.round((c * 9) / 5 + 32);
-        let fToC = (f) => Math.round(((f - 32) * 5) / 9);
-
-        let newValue = tempUnit ? (value <= 25 ? cToF(value) : value) : value > 25 ? fToC(value) : value;
-
-        service.getCharacteristic(this.api.hap.Characteristic.CurrentTemperature).updateValue(newValue);
+        /*
+         *let tempUnit = service.getCharacteristic(this.api.hap.Characteristic.TemperatureDisplayUnits).value;
+         *
+         *let cToF = (c) => Math.round((c * 9) / 5 + 32);
+         *let fToC = (f) => Math.round(((f - 32) * 5) / 9);
+         *
+         *let newValue = tempUnit ? (value <= 25 ? cToF(value) : value) : value > 25 ? fToC(value) : value;
+         *
+         *service.getCharacteristic(this.api.hap.Characteristic.CurrentTemperature).updateValue(newValue);
+        */
 
         this.timeoutAuto = setTimeout(() => {
           let targetState = service.getCharacteristic(this.api.hap.Characteristic.TargetHeatingCoolingState).value;
