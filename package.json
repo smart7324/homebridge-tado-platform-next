@@ -1,22 +1,8 @@
 {
-  "name": "homebridge-tado-platform-2",
-  "version": "1.0.0",
-  "description": "homebridge-tado-platform-2",
+  "name": "homebridge-tado-platform",
+  "version": "7.0.0",
+  "description": "homebridge-tado-platform",
   "main": "index.js",
-  "funding": [
-    {
-      "type": "paypal",
-      "url": "https://paypal.me/seydx"
-    },
-    {
-      "type": "kofi",
-      "url": "https://ko-fi.com/seydx"
-    },
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/seydx"
-    }
-  ],
   "scripts": {
     "lint": "eslint --fix ."
   },
@@ -24,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/smart7324/homebridge-tado-platform.git"
   },
-  "author": "SeydX (https://github.com/SeydX/homebridge-tado-platform) and Smart7324",
+  "author": "smart7324 (https://github.com/smart7324/homebridge-tado-platform/) forked from SeydX (https://github.com/SeydX/homebridge-tado-platform) and ",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/smart7324/homebridge-tado-platform/issues"
