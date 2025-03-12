@@ -146,7 +146,7 @@ TadoPlatform.prototype = {
     return;
   },
 
-  setupConfig: function () {
+  setupConfig: function (storagePath) {
     try {
       const { config, devices, deviceHandler, telegram } = TadoConfig.setup(this.config, UUIDGen, storagePath);
 
