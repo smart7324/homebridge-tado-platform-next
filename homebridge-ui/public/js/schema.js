@@ -68,12 +68,12 @@ const schema = {
             'longitude': {
               'title': 'Longitude',
               'type': 'string',
-              'description': 'Longitude coordinate of your home. (Used for Air Quality)'
+              'description': 'Longitude coordinate of your home.'
             },
             'latitude': {
               'title': 'Latitude',
               'type': 'string',
-              'description': 'Latitude coordinate of your home. (Used for Air Quality)'
+              'description': 'Latitude coordinate of your home.'
             }
           }
         },

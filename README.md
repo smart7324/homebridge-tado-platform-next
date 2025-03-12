@@ -51,7 +51,6 @@ After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
   - [Hot Water](#hot-water)
   - [Presence](#presence)
   - [Weather](#weather)
-    - [Air Quality](#air-quality)
   - [Extras](#extras)
     - [Central Switch](#central-switch)
       - [Boost Switch](#boost-switch)
