@@ -1,9 +1,14 @@
 # Changelog
 
+## v7.1.0 - 2025-03-12
+- Rewrite types for Homebridge v2.0
+- Remove AirQuality feature
+
 ## v7.0.0 - 2025-03-12
 - Add support for Homebridge v2.0
 - Change authentication to new workflow for tado REST API (https://support.tado.com/en/articles/8565472-how-do-i-authenticate-to-access-the-rest-api)
 - Fixed an issue where the current temperature has been setted to the target temperature after setting the current temperature
+e
 
 ## v6.0.14 - 2021-05-19
 - Fixed an issue where the thermostat displayed wrong room temperature due to wrong celsius/fahrenheit calculation
