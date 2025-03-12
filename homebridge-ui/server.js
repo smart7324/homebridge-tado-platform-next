@@ -19,7 +19,7 @@ class UiServer extends HomebridgePluginUiServer {
 
   authenticate(config) {
 
-    this.tado = new TadoApi('Config UI X', { username: config.username }, this.homebridgeStoragePath());
+    this.tado = new TadoApi('Config UI X', { username: config.username }, this.homebridgeStoragePath);
 
     return;
 
