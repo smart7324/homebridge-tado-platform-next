@@ -71,17 +71,13 @@ TadoPlatform.prototype = {
           if (!credentials.username) {
             Logger.warn('There is no username configured for the user. This user will be skipped.');
             error = true;
-          } else if (!credentials.password) {
-            Logger.warn('There is no password configured for the user. This user will be skipped.');
-            error = true;
           } else if (credentials.reconfigure === false) {
             error = true;
           }
 
           if (!error) {
             this.user.push({
-              username: credentials.username,
-              password: credentials.password,
+              username: credentials.username
             });
           }
         }
@@ -95,11 +91,10 @@ TadoPlatform.prototype = {
 
               if (foundHome.length) {
                 //refresh
-                if (foundHome[0].name && foundHome[0].username && foundHome[0].password) {
+                if (foundHome[0].name && foundHome[0].username) {
                   Logger.info('Refreshing home...', foundHome[0].name);
                   this.config = await TadoConfig.refresh(foundHome[0].name, this.config, {
-                    username: foundHome[0].username,
-                    password: foundHome[0].password,
+                    username: foundHome[0].username
                   });
                 }
               } else {
@@ -120,8 +115,7 @@ TadoPlatform.prototype = {
           .map((user) => {
             return {
               reconfigure: false,
-              username: user.username,
-              password: user.password,
+              username: user.username
             };
           })
           .filter((user) => user);

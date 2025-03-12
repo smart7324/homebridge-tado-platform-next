@@ -26,11 +26,9 @@ module.exports = {
 
     for (const user of credentials) {
       let username = user.username;
-      let password = user.password;
 
       const tado = new TadoApi('Configuration', {
         username: username,
-        password: password,
       });
 
       const me = await tado.getMe();
@@ -48,7 +46,6 @@ module.exports = {
             id: foundHome.id,
             name: foundHome.name,
             username: username,
-            password: password,
             polling: 30,
             zones: [],
             presence: {
@@ -166,8 +163,7 @@ module.exports = {
     for (const user of credentials) {
       //Init API with credentials
       const tado = new TadoApi('Configuration', {
-        username: user.username,
-        password: user.password,
+        username: user.username
       });
 
       const me = await tado.getMe();
@@ -176,8 +172,7 @@ module.exports = {
         availableHomesInApis.push({
           id: foundHome.id,
           name: foundHome.name,
-          username: user.username,
-          password: user.password,
+          username: user.username
         });
       });
     }
@@ -199,10 +194,9 @@ module.exports = {
 
     //refresh existing homes
     for (let home of config.homes.entries()) {
-      if (home.name && home.username && home.password) {
+      if (home.name && home.username) {
         config = await this.refresh(home.name, config, {
-          username: home.username,
-          password: home.password,
+          username: home.username
         });
       }
     }
@@ -214,11 +208,9 @@ module.exports = {
 
   refresh: async function (currentHome, config, credentials) {
     let username = credentials.username;
-    let password = credentials.password;
 
     const tado = new TadoApi('Configuration', {
-      username: username,
-      password: password,
+      username: username
     });
 
     //Home Informations
@@ -243,7 +235,6 @@ module.exports = {
       if (config.homes[i].name === homeInfo.name) {
         config.homes[i].id = homeInfo.id;
         config.homes[i].username = credentials.username;
-        config.homes[i].password = credentials.password;
         config.homes[i].temperatureUnit = homeInfo.temperatureUnit || 'CELSIUS';
         config.homes[i].zones = config.homes[i].zones || [];
 
@@ -509,23 +500,18 @@ module.exports = {
         } else if (!home.username) {
           Logger.warn('There is no username configured for this home. This home will be skipped.', home.name);
           error = true;
-        } else if (!home.password) {
-          Logger.warn('There is no password configured for this home. This home will be skipped.', home.name);
-          error = true;
         }
 
         if (!error) {
           //Base Config
           const tado = new TadoApi(home.name, {
-            username: home.username,
-            password: home.password,
+            username: home.username
           });
 
           const accessoryConfig = {
             homeId: home.id,
             homeName: home.name,
             username: home.username,
-            password: home.password,
             temperatureUnit: home.temperatureUnit || 'CELSIUS',
             geolocation: home.geolocation,
             tado: tado,
@@ -586,8 +572,8 @@ module.exports = {
                           ? 'zone-heatercooler'
                           : 'zone-thermostat'
                         : valid_boilerTypes.includes(zone.accTypeBoiler) && zone.accTypeBoiler === 'FAUCET'
-                        ? 'zone-faucet'
-                        : 'zone-switch';
+                          ? 'zone-faucet'
+                          : 'zone-switch';
 
                     config.subtype = zone.boilerTempSupport ? 'zone-heatercooler-boiler' : config.subtype;
 

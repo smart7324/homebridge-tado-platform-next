@@ -14,8 +14,7 @@
                 {
                     "id": 123456,
                     "name": "My Home",
-                    "username": "test@user.com",
-                    "password": "myPassWord!",
+                    "username": "mail@example.com",
                     "polling": 60,
                     "temperatureUnit": "CELSIUS",
                     "geolocation": {
