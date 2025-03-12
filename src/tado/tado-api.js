@@ -2,6 +2,7 @@
 
 const Logger = require('../helper/logger.js');
 const got = require('got');
+const path = require('path');
 const fs = require('fs').promises;
 
 const tado_url = "https://my.tado.com";
@@ -20,7 +21,7 @@ class Tado {
       }
       return (hash >>> 0).toString(36).padStart(7, '0');
     };
-    this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join(this.api.user.storagePath(), `.tado-token-${fnSimpleHash(config.username)}.json`);
+    this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join("/var/lib/homebridge/", `.tado-token-${fnSimpleHash(config.username)}.json`);
     this._tadoApiClientId = "1bb50063-6b0c-4d11-bd99-387f4a91cc46";
     Logger.debug("API successfull initialized", this.name);
   }
@@ -29,11 +30,11 @@ class Tado {
     try {
       if (!this._tadoBearerToken) this._tadoBearerToken = { access_token: undefined, refresh_token: undefined, timestamp: 0 };
       if ((Date.now() - this._tadoBearerToken.timestamp) < 9 * 60 * 1000) return this._tadoBearerToken.access_token;
-      
+
       if (this._tadoExternalTokenFilePath) await this._retrieveTokenFromExternalFile();
       else await this._retrieveToken();
 
-      if(!this._tadoBearerToken.access_token) throw new Error("An unknown error occurred.");
+      if (!this._tadoBearerToken.access_token) throw new Error("An unknown error occurred.");
 
       return this._tadoBearerToken.access_token;
     } catch (error) {
@@ -43,7 +44,7 @@ class Tado {
 
   async _retrieveToken() {
     try {
-      if(this._tadoBearerToken.refresh_token) return this._refreshToken(this._tadoBearerToken.refresh_token);
+      if (this._tadoBearerToken.refresh_token) return this._refreshToken(this._tadoBearerToken.refresh_token);
       await fs.access(this._tadoInternalTokenFilePath);
       const refresh_token = await this._retrieveRefreshTokenFromInternalFile();
       return this._refreshToken(refresh_token);
@@ -104,19 +105,27 @@ class Tado {
     const maxRetries = 30;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       await new Promise(resolve => setTimeout(resolve, 5000));
-      const tokenResponse = await got.post(`${tado_auth_url}/token`, {
-        form: {
-          client_id: this._tadoApiClientId,
-          device_code: device_code,
-          grant_type: "urn:ietf:params:oauth:grant-type:device_code"
-        },
-        responseType: "json"
-      });
-      const { access_token, refresh_token } = tokenResponse.body;
-      if (access_token) {
-        await fs.writeFile(this._tadoInternalTokenFilePath, JSON.stringify({ access_token, refresh_token }));
-        this._tadoBearerToken = { access_token, refresh_token, timestamp: Date.now() };
-        return;
+      let tokenResponse;
+      try {
+        tokenResponse = await got.post(`${tado_auth_url}/token`, {
+          form: {
+            client_id: this._tadoApiClientId,
+            device_code: device_code,
+            grant_type: "urn:ietf:params:oauth:grant-type:device_code"
+          },
+          responseType: 'json'
+        });
+      } catch (error) {
+        //authentication still pending -> response code 400
+      }
+      if (tokenResponse?.body) {
+        const { access_token, refresh_token } = tokenResponse?.body;
+        if (access_token) {
+          await fs.writeFile(this._tadoInternalTokenFilePath, JSON.stringify({ access_token, refresh_token }));
+          this._tadoBearerToken = { access_token, refresh_token, timestamp: Date.now() };
+          Logger.info("Authentication successful!");
+          return;
+        }
       }
       Logger.info("Waiting for confirmation...");
     }
