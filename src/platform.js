@@ -53,16 +53,18 @@ function TadoPlatform(log, config, api) {
 
   this.user = [];
 
-  //setup config/plugin
-  this.setupPlugin();
+  const storagePath = this.api.user.storagePath();
 
-  if (!this.user.length) this.setupConfig();
+  //setup config/plugin
+  this.setupPlugin(storagePath);
+
+  if (!this.user.length) this.setupConfig(storagePath);
 
   this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
 }
 
 TadoPlatform.prototype = {
-  setupPlugin: async function () {
+  setupPlugin: async function (storagePath) {
     try {
       if (this.config.user && this.config.user.length) {
         for (const credentials of this.config.user) {
@@ -95,15 +97,15 @@ TadoPlatform.prototype = {
                   Logger.info('Refreshing home...', foundHome[0].name);
                   this.config = await TadoConfig.refresh(foundHome[0].name, this.config, {
                     username: foundHome[0].username
-                  });
+                  }, storagePath);
                 }
               } else {
                 Logger.info('Generating new home...', user.username);
-                this.config = await TadoConfig.add(this.config, [user]);
+                this.config = await TadoConfig.add(this.config, [user], storagePath);
               }
             } else {
               Logger.info('Generating new home...', user.username);
-              this.config = await TadoConfig.add(this.config, [user]);
+              this.config = await TadoConfig.add(this.config, [user], storagePath);
             }
           }
         }
@@ -120,13 +122,13 @@ TadoPlatform.prototype = {
           })
           .filter((user) => user);
 
-        await TadoConfig.store(this.config, this.api.user.storagePath());
+        await TadoConfig.store(this.config, storagePath);
 
         Logger.info('Done!');
 
         //setup config
         this.user = [];
-        this.setupConfig();
+        this.setupConfig(storagePath);
 
         //configure accessories
         this.accessories.forEach((accessory) => {
@@ -146,7 +148,7 @@ TadoPlatform.prototype = {
 
   setupConfig: function () {
     try {
-      const { config, devices, deviceHandler, telegram } = TadoConfig.setup(this.config, UUIDGen);
+      const { config, devices, deviceHandler, telegram } = TadoConfig.setup(this.config, UUIDGen, storagePath);
 
       this.config = config;
       this.devices = devices;

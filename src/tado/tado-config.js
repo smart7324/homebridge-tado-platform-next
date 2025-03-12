@@ -21,7 +21,7 @@ const deviceHandler = new Map();
 let telegram;
 
 module.exports = {
-  add: async function (config, credentials) {
+  add: async function (config, credentials, storagePath) {
     config.homes = config.homes || [];
 
     for (const user of credentials) {
@@ -29,7 +29,7 @@ module.exports = {
 
       const tado = new TadoApi('Configuration', {
         username: username,
-      });
+      }, storagePath);
 
       const me = await tado.getMe();
 
@@ -157,14 +157,14 @@ module.exports = {
     return config;
   },
 
-  resync: async function (config, credentials) {
+  resync: async function (config, credentials, storagePath) {
     const availableHomesInApis = [];
 
     for (const user of credentials) {
       //Init API with credentials
       const tado = new TadoApi('Configuration', {
         username: user.username
-      });
+      }, storagePath);
 
       const me = await tado.getMe();
 
@@ -197,21 +197,21 @@ module.exports = {
       if (home.name && home.username) {
         config = await this.refresh(home.name, config, {
           username: home.username
-        });
+        }, storagePath);
       }
     }
 
-    config = await this.add(config, availableHomesInApis);
+    config = await this.add(config, availableHomesInApis, storagePath);
 
     return config;
   },
 
-  refresh: async function (currentHome, config, credentials) {
+  refresh: async function (currentHome, config, credentials, storagePath) {
     let username = credentials.username;
 
     const tado = new TadoApi('Configuration', {
       username: username
-    });
+    }, storagePath);
 
     //Home Informations
     let home = config.homes.find((home) => home && home.name === currentHome);
@@ -488,7 +488,7 @@ module.exports = {
     return config;
   },
 
-  setup: function (config, UUIDGen) {
+  setup: function (config, UUIDGen, storagePath) {
     if (config.homes && config.homes.length) {
       config.homes.forEach((home) => {
         let error = false;
@@ -506,7 +506,7 @@ module.exports = {
           //Base Config
           const tado = new TadoApi(home.name, {
             username: home.username
-          });
+          }, storagePath);
 
           const accessoryConfig = {
             homeId: home.id,

@@ -9,7 +9,7 @@ const tado_url = "https://my.tado.com";
 const tado_auth_url = "https://login.tado.com/oauth2";
 
 class Tado {
-  constructor(name, config) {
+  constructor(name, config, storagePath) {
     this.name = name;
     const usesExternalTokenFile = config.username.toLowerCase().includes(".json");
     this._tadoExternalTokenFilePath = usesExternalTokenFile ? config.username : undefined;
@@ -21,7 +21,7 @@ class Tado {
       }
       return (hash >>> 0).toString(36).padStart(7, '0');
     };
-    this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join("/var/lib/homebridge/", `.tado-token-${fnSimpleHash(config.username)}.json`);
+    this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join(storagePath, `.tado-token-${fnSimpleHash(config.username)}.json`);
     this._tadoApiClientId = "1bb50063-6b0c-4d11-bd99-387f4a91cc46";
     Logger.debug("API successfull initialized", this.name);
   }
@@ -113,7 +113,7 @@ class Tado {
             device_code: device_code,
             grant_type: "urn:ietf:params:oauth:grant-type:device_code"
           },
-          responseType: 'json'
+          responseType: "json"
         });
       } catch (error) {
         //authentication still pending -> response code 400
