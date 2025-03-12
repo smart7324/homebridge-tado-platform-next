@@ -521,7 +521,6 @@ async function fetchDevices(credentials, refresh, resync) {
                   easyMode: false,
                   openWindowSensor: false,
                   openWindowSwitch: false,
-                  airQuality: false,
                   separateTemperature: false,
                   separateHumidity: false,
                   accTypeBoiler: 'SWITCH',
@@ -589,7 +588,6 @@ async function fetchDevices(credentials, refresh, resync) {
                 easyMode: false,
                 openWindowSensor: false,
                 openWindowSwitch: false,
-                airQuality: false,
                 separateTemperature: false,
                 separateHumidity: false,
                 accTypeBoiler: 'SWITCH',
@@ -904,7 +902,6 @@ async function fetchDevices(credentials, refresh, resync) {
                     easyMode: false,
                     openWindowSensor: false,
                     openWindowSwitch: false,
-                    airQuality: false,
                     separateTemperature: false,
                     separateHumidity: false,
                     accTypeBoiler: 'SWITCH',
@@ -973,7 +970,6 @@ async function fetchDevices(credentials, refresh, resync) {
                   easyMode: false,
                   openWindowSensor: false,
                   openWindowSwitch: false,
-                  airQuality: false,
                   separateTemperature: false,
                   separateHumidity: false,
                   accTypeBoiler: 'SWITCH',
@@ -1076,8 +1072,7 @@ async function fetchDevices(credentials, refresh, resync) {
             weather: {
               temperatureSensor: false,
               solarIntensity: false,
-              accTypeSolarIntensity: 'LIGHTBULB',
-              airQuality: false
+              accTypeSolarIntensity: 'LIGHTBULB'
             },
             extras: {
               centralSwitch: false,
@@ -1177,7 +1172,6 @@ async function fetchDevices(credentials, refresh, resync) {
               easyMode: false,
               openWindowSensor: false,
               openWindowSwitch: false,
-              airQuality: false,
               separateTemperature: false,
               separateHumidity: false,
               accTypeBoiler: 'SWITCH',
@@ -1234,8 +1228,7 @@ async function fetchDevices(credentials, refresh, resync) {
             weather: {
               temperatureSensor: false,
               solarIntensity: false,
-              accTypeSolarIntensity: 'LIGHTBULB',
-              airQuality: false
+              accTypeSolarIntensity: 'LIGHTBULB'
             },
             extras: {
               centralSwitch: false,
@@ -1347,7 +1340,6 @@ async function fetchDevices(credentials, refresh, resync) {
               easyMode: false,
               openWindowSensor: false,
               openWindowSwitch: false,
-              airQuality: false,
               separateTemperature: false,
               separateHumidity: false,
               accTypeBoiler: 'SWITCH',

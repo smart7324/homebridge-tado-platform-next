@@ -1,10 +1,6 @@
 {
-    "bridge": {
-        ...
-    },
-    "accessories": [
-        ...
-    ],
+    "bridge": {},
+    "accessories": [],
     "platforms": [
         {
             "name": "TadoPlatform",
@@ -40,8 +36,7 @@
                     "weather": {
                         "temperatureSensor": true,
                         "solarIntensity": true,
-                        "accTypeSolarIntensity": "LIGHTBULB",
-                        "airQuality": true
+                        "accTypeSolarIntensity": "LIGHTBULB"
                     },
                     "extras": {
                         "centralSwitch": true,
@@ -78,7 +73,6 @@
                             "type": "HEATING",
                             "delaySwitch": true,
                             "autoOffDelay": true,
-                            "airQuality": true,
                             "openWindowSensor": true,
                             "openWindowSwitch": false,
                             "separateTemperature": false,
@@ -129,7 +123,6 @@
                             "type": "HEATING",
                             "delaySwitch": true,
                             "autoOffDelay": false,
-                            "airQuality": true,
                             "openWindowSensor": true,
                             "openWindowSwitch": false,
                             "separateTemperature": true,

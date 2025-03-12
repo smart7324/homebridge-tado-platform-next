@@ -160,7 +160,6 @@ You can also adjust the minimum temperature step ``"minStep"``, minimum temperat
         "autoOffDelay": false,
         "openWindowSensor": true,
         "openWindowSwitch": false,
-        "airQuality": true,
         "separateTemperature": false,
         "separateHumidity": true,
         "mode": "MANUAL",
@@ -293,19 +292,13 @@ Weather settings allow you to display a sensor for temperature, a light bulb (``
     "weather": {
       "temperatureSensor": true,
       "solarIntensity": true,
-      "accTypeSolarIntensity": "LIGHTBULB",
-      "airQuality": true
+      "accTypeSolarIntensity": "LIGHTBULB"
     }
     ...
   }
   ...
 ]
 ```
-
-### Air Quality
-
-In order to use the Air Quality Sensor, you need to enable airQuality ``"airQuality": true`` (see above) **AND** you must enter your location data (latitude and longitude) in config.json. You can easily find the coordinates to your location/address on the following page: [latlong.net](https://www.latlong.net/convert-address-to-lat-long.html)
-
 
 ```
 "homes": [
@@ -317,9 +310,7 @@ In order to use the Air Quality Sensor, you need to enable airQuality ``"airQual
     "zones": [ ... ],
     "extras": { ... },
     "presence": { ... },
-    "weather": { 
-      "airQuality": true
-    }
+    "weather": { ... }
     ...
   }
   ...

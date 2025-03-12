@@ -152,7 +152,6 @@ module.exports = {
 
         // Optional Characteristics
         this.addOptionalCharacteristic(Characteristic.Name);
-        this.addOptionalCharacteristic(Characteristic.AirQuality);
         this.addOptionalCharacteristic(Characteristic.CurrentRelativeHumidity);
         this.addOptionalCharacteristic(Characteristic.TargetRelativeHumidity);
         this.addOptionalCharacteristic(Characteristic.CoolingThresholdTemperature);
@@ -176,7 +175,6 @@ module.exports = {
 
         // Optional Characteristics
         this.addOptionalCharacteristic(Characteristic.Name);
-        this.addOptionalCharacteristic(Characteristic.AirQuality);
         this.addOptionalCharacteristic(Characteristic.CurrentRelativeHumidity);
         this.addOptionalCharacteristic(Characteristic.LockPhysicalControls);
         this.addOptionalCharacteristic(Characteristic.RotationSpeed);
@@ -233,32 +231,5 @@ module.exports = {
     }
     ValveService.UUID = '000000D0-0000-1000-8000-0026BB765291';
     Service.Valve = ValveService;
-
-    // AirQuality Service
-    class AirQualityService extends Service {
-      constructor(displayName, subtype) {
-        super(displayName, '0000008D-0000-1000-8000-0026BB765291', subtype);
-
-
-        // Required Characteristics
-        this.addCharacteristic(Characteristic.AirQuality);
-
-        // Optional Characteristics
-        this.addOptionalCharacteristic(Characteristic.Name);
-        this.addOptionalCharacteristic(Characteristic.NitrogenDioxideDensity);
-        this.addOptionalCharacteristic(Characteristic.OzoneDensity);
-        this.addOptionalCharacteristic(Characteristic.PM10Density);
-        this.addOptionalCharacteristic(Characteristic.PM2_5Density);
-        this.addOptionalCharacteristic(Characteristic.SulphurDioxideDensity);
-        this.addOptionalCharacteristic(Characteristic.VOCDensity);
-        this.addOptionalCharacteristic(Characteristic.CarbonMonoxideLevel);
-        this.addOptionalCharacteristic(Characteristic.StatusActive);
-        this.addOptionalCharacteristic(Characteristic.StatusFault);
-        this.addOptionalCharacteristic(Characteristic.StatusLowBattery);
-        this.addOptionalCharacteristic(Characteristic.StatusTampered);
-      }
-    }
-    AirQualityService.UUID = '0000008D-0000-1000-8000-0026BB765291';
-    Service.AirQuality = AirQualityService;
   }
 };

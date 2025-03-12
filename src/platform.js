@@ -6,7 +6,6 @@ const packageFile = require('../package.json');
 const TadoConfig = require('./tado/tado-config.js');
 
 //Accessories
-const AirqualityAccessory = require('./accessories/airquality.js');
 const ContactAccessory = require('./accessories/contact.js');
 const FaucetAccessory = require('./accessories/faucet.js');
 const HeaterCoolerAccessory = require('./accessories/heatercooler.js');
@@ -287,9 +286,6 @@ TadoPlatform.prototype = {
         break;
       case 'weather-lightsensor':
         new SolarLightsensorAccessory(this.api, accessory, this.accessories, tado);
-        break;
-      case 'weather-airquality':
-        new AirqualityAccessory(this.api, accessory, this.accessories, tado);
         break;
       case 'extra-plock':
         new SecurityAccessory(this.api, accessory, this.accessories, tado, deviceHandler);

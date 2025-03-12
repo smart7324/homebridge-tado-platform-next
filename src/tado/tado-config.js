@@ -56,8 +56,7 @@ module.exports = {
             weather: {
               temperatureSensor: false,
               solarIntensity: false,
-              accTypeSolarIntensity: 'LIGHTBULB',
-              airQuality: false,
+              accTypeSolarIntensity: 'LIGHTBULB'
             },
             extras: {
               centralSwitch: false,
@@ -141,7 +140,6 @@ module.exports = {
               openWindowSensor: false,
               openWindowSwitch: false,
               accTypeOpenWindowSwitch: 'SWITCH',
-              airQuality: false,
               separateTemperature: false,
               separateHumidity: false,
               accTypeBoiler: 'SWITCH',
@@ -384,7 +382,6 @@ module.exports = {
                 openWindowSensor: false,
                 openWindowSwitch: false,
                 accTypeOpenWindowSwitch: 'SWITCH',
-                airQuality: false,
                 separateTemperature: false,
                 separateHumidity: false,
                 accTypeBoiler: 'SWITCH',
@@ -434,7 +431,6 @@ module.exports = {
               openWindowSensor: false,
               openWindowSwitch: false,
               accTypeOpenWindowSwitch: 'SWITCH',
-              airQuality: false,
               separateTemperature: false,
               separateHumidity: false,
               accTypeBoiler: 'SWITCH',
@@ -579,7 +575,6 @@ module.exports = {
 
                     config.zoneId = zone.id;
                     config.type = zone.type;
-                    config.airQuality = zone.airQuality;
                     config.separateTemperature = zone.separateTemperature;
                     config.separateHumidity = zone.separateHumidity;
                     config.minStep = zone.minStep;
@@ -803,33 +798,6 @@ module.exports = {
                 config.subtype =
                   home.weather.accTypeSolarIntensity === 'SENSOR' ? 'weather-lightsensor' : 'weather-lightbulb';
                 config.model = 'Solar Intensity';
-                config.serialNumber = hashCode(name);
-
-                devices.set(uuid, config);
-              }
-            }
-
-            //Configure Weather AirQuality Sensor
-            if (
-              home.weather.airQuality &&
-              home.geolocation &&
-              home.geolocation.latitude &&
-              home.geolocation.longitude
-            ) {
-              const name = home.name + ' Air Quality';
-              const uuid = UUIDGen.generate(name);
-
-              if (devices.has(uuid)) {
-                Logger.warn('Multiple devices are configured with this name. Duplicate devices will be skipped.', name);
-              } else {
-                let config = { ...accessoryConfig };
-
-                config.name = name;
-                config.subtype = 'weather-airquality';
-                config.latitude = home.geolocation.latitude;
-                config.longitude = home.geolocation.longitude;
-
-                config.model = 'Air Quality Sensor';
                 config.serialNumber = hashCode(name);
 
                 devices.set(uuid, config);

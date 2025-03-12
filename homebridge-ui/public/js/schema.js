@@ -187,11 +187,6 @@ const schema = {
                 }
               ],
               'description': 'The accessory type of the device.'
-            },
-            'airQuality': {
-              'title': 'Air Quality',
-              'type': 'boolean',
-              'description': 'If enabled, a air quality sensor will be exposed to HomeKit. (Longitute and Latitude must be set in the config)'
             }
           }
         },
@@ -343,14 +338,6 @@ const schema = {
                 'title': 'Open Window Switch',
                 'type': 'boolean',
                 'description': 'If enabled, additional window switch accessory for each zone will be exposed to HomeKit to trigger and enable/disable open window.'
-              },
-              'airQuality': {
-                'title': 'Room Air Quality Sensor',
-                'type': 'boolean',
-                'description': 'If enabled, the thermostat/heater cooler accessory will also show an air quality indicator.',
-                'condition': {
-                  'functionBody': 'try { return model.homes.zones[arrayIndices[0]].type === \'HEATING\' } catch(e){ return false }'
-                }
               },
               'separateTemperature': {
                 'title': 'Separate Temperature Sensors',
@@ -660,7 +647,6 @@ const schema = {
                   'expanded': false,
                   'type': 'section',
                   'items': [
-                    'homes.zones[].airQuality',
                     'homes.zones[].separateTemperature',
                     'homes.zones[].separateHumidity'
                   ]
@@ -732,11 +718,10 @@ const schema = {
         'homes.weather.temperatureSensor',
         'homes.weather.solarIntensity',
         'homes.weather.accTypeSolarIntensity',
-        'homes.weather.airQuality',
         {
           'title': 'Location',
           'condition': {
-            'functionBody': 'try { return model.homes.weather.airQuality } catch(e) { return false };'
+            'functionBody': 'return false;'
           },
           'orderable': false,
           'items': [

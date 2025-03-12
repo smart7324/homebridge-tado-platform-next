@@ -73,15 +73,6 @@ class HeaterCoolerAccessory {
       }
     }
 
-    //Handle AirQuality
-    if (this.accessory.context.config.airQuality && this.accessory.context.config.type !== 'HOT_WATER') {
-      if (!service.testCharacteristic(this.api.hap.Characteristic.AirQuality))
-        service.addCharacteristic(this.api.hap.Characteristic.AirQuality);
-    } else {
-      if (service.testCharacteristic(this.api.hap.Characteristic.AirQuality))
-        service.removeCharacteristic(service.getCharacteristic(this.api.hap.Characteristic.AirQuality));
-    }
-
     //Handle DelaySwitch
     if (this.accessory.context.config.delaySwitch && this.accessory.context.config.type !== 'HOT_WATER') {
       if (!service.testCharacteristic(this.api.hap.Characteristic.DelaySwitch))
