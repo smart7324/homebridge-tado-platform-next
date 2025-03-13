@@ -1062,7 +1062,7 @@ async function fetchDevices(credentials, refresh, resync) {
             id: foundHome.id,
             name: foundHome.name,
             username: foundHome.username,
-            polling: 30,
+            polling: 300,
             zones: [],
             presence: {
               anyone: false,
@@ -1218,7 +1218,7 @@ async function fetchDevices(credentials, refresh, resync) {
             id: foundHome.id,
             name: foundHome.name,
             username: credentials.username,
-            polling: 30,
+            polling: 300,
             zones: [],
             presence: {
               anyone: false,
