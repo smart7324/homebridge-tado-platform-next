@@ -41,6 +41,10 @@ function TadoPlatform(log, config, api) {
   //init logger
   Logger.init(log, config.debug);
 
+  //add deprecated Perms enum values as fakegato-history is still using them
+  api.hap.Perms.WRITE = api.hap.Perms.PAIRED_WRITE;
+  api.hap.Perms.READ = api.hap.Perms.PAIRED_READ;
+
   //init types/fakegato
   CustomTypes.registerWith(api.hap);
   EveTypes.registerWith(api.hap);

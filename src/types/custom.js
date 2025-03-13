@@ -13,7 +13,7 @@ module.exports = {
           maxValue: 100,
           minValue: 0,
           minStep: 1,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -30,7 +30,7 @@ module.exports = {
           maxValue: 100,
           minValue: 0,
           minStep: 1,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -47,7 +47,7 @@ module.exports = {
           maxValue: 100,
           minValue: 0,
           minStep: 1,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -64,7 +64,7 @@ module.exports = {
           maxValue: 99999,
           minValue: 0,
           minStep: 0.01,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -81,7 +81,7 @@ module.exports = {
           maxValue: 99999,
           minValue: 0,
           minStep: 0.01,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -98,7 +98,7 @@ module.exports = {
           maxValue: 99999,
           minValue: 0,
           minStep: 0.01,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -112,7 +112,7 @@ module.exports = {
         super('Delay', 'b7c9db1a-e54e-4f4f-b3b4-17a19b2c4631');
         this.setProps({
           format: Formats.BOOL,
-          perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.PAIRED_WRITE, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -129,7 +129,7 @@ module.exports = {
           maxValue: 120,
           minValue: 0,
           minStep: 10,
-          perms: [Perms.READ, Perms.WRITE, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.PAIRED_WRITE, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }

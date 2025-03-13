@@ -13,7 +13,7 @@ module.exports = {
         this.setProps({
           format: Formats.UINT32,
           unit: Units.SECONDS,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -29,7 +29,7 @@ module.exports = {
         super('History Status', 'E863F116-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.DATA,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -45,7 +45,7 @@ module.exports = {
         super('History Entries', 'E863F117-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.DATA,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -61,7 +61,7 @@ module.exports = {
         super('History Request', 'E863F11C-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.DATA,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -77,7 +77,7 @@ module.exports = {
         super('Set Time', 'E863F121-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.DATA,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -94,7 +94,7 @@ module.exports = {
         this.setProps({
           format: Formats.UINT32,
           unit: Units.SECONDS,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -110,7 +110,7 @@ module.exports = {
         super('Times Opened', 'E863F129-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.UINT32,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -127,7 +127,7 @@ module.exports = {
         this.setProps({
           format: Formats.UINT32,
           unit: Units.SECONDS,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -144,7 +144,7 @@ module.exports = {
         this.setProps({
           format: Formats.UINT32,
           unit: Units.SECONDS,
-          perms: [Perms.READ, Perms.NOTIFY, Perms.WRITE],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY, Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -161,7 +161,7 @@ module.exports = {
         this.setProps({
           format: Formats.FLOAT,
           unit: 'W',
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -178,7 +178,7 @@ module.exports = {
         this.setProps({
           format: Formats.FLOAT,
           unit: 'kWh',
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -195,7 +195,7 @@ module.exports = {
         this.setProps({
           format: Formats.FLOAT,
           unit: 'V',
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -212,7 +212,7 @@ module.exports = {
         this.setProps({
           format: Formats.FLOAT,
           unit: 'A',
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -229,7 +229,7 @@ module.exports = {
         this.setProps({
           format: Formats.UINT8,
           unit: Units.PERCENTAGE,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
@@ -245,7 +245,7 @@ module.exports = {
         super('Program Command', 'E863F12C-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.DATA,
-          perms: [Perms.WRITE],
+          perms: [Perms.PAIRED_WRITE],
         });
         this.value = this.getDefaultValue();
       }
@@ -261,7 +261,7 @@ module.exports = {
         super('Program Data', 'E863F12F-079E-48FF-8F27-9C2605A29F52');
         this.setProps({
           format: Formats.DATA,
-          perms: [Perms.READ, Perms.NOTIFY],
+          perms: [Perms.PAIRED_READ, Perms.NOTIFY],
         });
         this.value = this.getDefaultValue();
       }
