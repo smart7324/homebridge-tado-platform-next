@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.2.0 - 2025-03-13
+- Support new authentication workflow in config-ui
+- Update dependencies
+
 ## v7.1.0 - 2025-03-12
 - Rewrite types for Homebridge v2.0
 - Remove AirQuality feature

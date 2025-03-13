@@ -1,6 +1,6 @@
 {
   "name": "homebridge-tado-platform-next",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "Homebridge platform plugin providing HomeKit support for tado° devices.",
   "main": "index.js",
   "scripts": {
@@ -31,22 +31,21 @@
     "homebridge": "^1.6.0 || ^2.0.0-beta.0"
   },
   "dependencies": {
-    "@homebridge/plugin-ui-utils": "^0.0.19",
-    "fakegato-history": "^0.6.1",
-    "form-data": "^4.0.0",
-    "fs-extra": "^10.0.0",
-    "got": "^11.8.2",
-    "moment": "^2.29.1",
-    "simple-oauth2": "^4.2.0"
+    "@homebridge/plugin-ui-utils": "^2.0.1",
+    "fakegato-history": "^0.6.5",
+    "form-data": "^4.0.2",
+    "fs-extra": "^11.3.0",
+    "got": "^14.4.6",
+    "moment": "^2.30.1"
   },
   "devDependencies": {
-    "@babel/core": "7.14.3",
-    "@babel/eslint-parser": "7.14.4",
-    "@babel/eslint-plugin": "7.13.16",
-    "eslint": "^7.27.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.0"
+    "@babel/core": "7.26.10",
+    "@babel/eslint-parser": "7.26.10",
+    "@babel/eslint-plugin": "7.26.10",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.3"
   }
 }
