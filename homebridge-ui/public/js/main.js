@@ -312,10 +312,23 @@ async function fetchDevices(credentials, refresh, resync) {
   const config = JSON.parse(JSON.stringify(pluginConfig));
 
   try {
+    const fnAuthenticate = async (params) => {
+      homebridge.request('/authenticate', params);
+      const instructionsURL = await homebridge.request('/exec', { dest: 'fullAuthentication' });
+      if (instructionsURL && instructionsURL !== "") {
+        $("#fetchDevices #authenticationInstructions").html(`Please open this URL in your browser and confirm the login: <a href="${instructionsURL}" target ="_blank">${instructionsURL}</a>`);
+        $("#fetchDevices #authenticationInstructions").css("display", "block");
+        homebridge.toast.info("Please follow the instructions above and confirm your login.");
+        const authenticationSuccessful = await homebridge.request('/exec', { dest: 'waitForAuthentication' });
+        $("#fetchDevices #authenticationInstructions").html("");
+        $("#fetchDevices #authenticationInstructions").css("display", "none");
+        homebridge.toast.success(authenticationSuccessful);
+      }
+    }
 
     if (!resync) {
       //Init API with credentials
-      homebridge.request('/authenticate', credentials);
+      await fnAuthenticate(credentials);
 
       await TIMEOUT(2000);
 
@@ -653,7 +666,7 @@ async function fetchDevices(credentials, refresh, resync) {
         if (home.name && home.username) {
 
           //Init API with credentials
-          homebridge.request('/authenticate', { username: home.username });
+          await fnAuthenticate({ username: home.username });
 
           //resync home (refresh/remove)
           const me = await homebridge.request('/exec', { dest: 'getMe' });
@@ -686,7 +699,7 @@ async function fetchDevices(credentials, refresh, resync) {
         if (home.name && home.username) {
 
           //Init API with credentials
-          homebridge.request('/authenticate', { username: home.username });
+          await fnAuthenticate({ username: home.username });
 
           let foundHome;
 
@@ -726,7 +739,7 @@ async function fetchDevices(credentials, refresh, resync) {
         if (home.name && home.username) {
 
           //Init API with credentials
-          homebridge.request('/authenticate', { username: home.username });
+          await fnAuthenticate({ username: home.username });
 
           let foundHome;
 
@@ -1056,7 +1069,7 @@ async function fetchDevices(credentials, refresh, resync) {
           addedHomes += 1;
 
           //Init API with credentials
-          homebridge.request('/authenticate', { username: foundHome.username });
+          await fnAuthenticate({ username: foundHome.username });
 
           const homeConfig = {
             id: foundHome.id,

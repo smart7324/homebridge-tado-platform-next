@@ -23,10 +23,20 @@ class Tado {
     };
     this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join(storagePath, `.tado-token-${fnSimpleHash(config.username)}.json`);
     this._tadoApiClientId = "1bb50063-6b0c-4d11-bd99-387f4a91cc46";
+    this._tadoTokenPromise = undefined;
     Logger.debug("API successfull initialized", this.name);
   }
 
   async _getToken() {
+    if (!this._tadoTokenPromise) {
+      this._tadoTokenPromise = this._getAuthToken().finally(() => {
+        this._tadoTokenPromise = undefined;
+      });
+    }
+    return this._tadoTokenPromise;
+  }
+
+  async _getAuthToken() {
     try {
       if (!this._tadoBearerToken) this._tadoBearerToken = { access_token: undefined, refresh_token: undefined, timestamp: 0 };
       if ((Date.now() - this._tadoBearerToken.timestamp) < 9 * 60 * 1000) return this._tadoBearerToken.access_token;
@@ -102,6 +112,7 @@ class Tado {
     const { device_code, verification_uri_complete } = authResponse.body;
     if (!device_code) throw new Error("Failed to retrieve device code.");
     Logger.info(`Please open this URL in your browser and confirm the login: ${verification_uri_complete}`);
+    if (this._tadoAuthenticationCallback) this._tadoAuthenticationCallback(verification_uri_complete);
     const maxRetries = 30;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       await new Promise(resolve => setTimeout(resolve, 5000));
@@ -205,6 +216,28 @@ class Tado {
       Logger.debug('API request ' + method + ' ' + path + ' <response> ' + JSON.stringify(response.body), this.name);
 
     return response.body;
+  }
+
+  async fullAuthentication() {
+    let instructions = "";
+    let resolve;
+    const oPromise = new Promise((res, _) => {
+      resolve = res;
+    });
+    this._tadoAuthenticationCallback = (openInBrowserInstructions) => {
+      instructions = openInBrowserInstructions;
+      resolve();
+    };
+    await Promise.race([
+      this._getToken(),
+      oPromise
+    ]);
+    return instructions;
+  }
+
+  async waitForAuthentication() {
+    await this._getToken();
+    return "Authentication successful!";
   }
 
   async getMe() {
