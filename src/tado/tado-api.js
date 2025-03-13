@@ -1,7 +1,7 @@
 'use strict';
 
 const Logger = require('../helper/logger.js');
-const got = require('got');
+const got = require('got').default;
 const path = require('path');
 const fs = require('fs').promises;
 
@@ -188,7 +188,9 @@ class Tado {
       headers: {
         Authorization: 'Bearer ' + access_token,
       },
-      timeout: 30000,
+      timeout: {
+        request: 30000
+      },
       retry: {
         limit: 2,
         statusCodes: [408, 429, 503, 504],
