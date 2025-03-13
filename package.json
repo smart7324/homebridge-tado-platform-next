@@ -1,6 +1,6 @@
 {
   "name": "homebridge-tado-platform-next",
-  "version": "7.2.0",
+  "version": "7.3.0",
   "description": "Homebridge platform plugin providing HomeKit support for tado° devices.",
   "main": "index.js",
   "scripts": {

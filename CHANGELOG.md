@@ -1,5 +1,8 @@
 # Changelog
 
+## v7.3.0 - 2025-03-13
+- Fixed an issue that caused HomeKit from pairing with the bridge (Error: Accessory out of compliance)
+
 ## v7.2.0 - 2025-03-13
 - Support new authentication workflow in config-ui
 - Update dependencies
