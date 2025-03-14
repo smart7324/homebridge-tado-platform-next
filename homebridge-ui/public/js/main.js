@@ -316,7 +316,7 @@ async function fetchDevices(credentials, refresh, resync) {
       homebridge.request('/authenticate', params);
       const instructionsURL = await homebridge.request('/exec', { dest: 'fullAuthentication' });
       if (instructionsURL && instructionsURL !== "") {
-        $("#fetchDevices #authenticationInstructions").html(`Please open this URL in your browser and confirm the login: <a href="${instructionsURL}" target ="_blank">${instructionsURL}</a>`);
+        $("#fetchDevices #authenticationInstructions").html(`Please open this URL in your browser, click "submit" and log in to your tado° account: <a href="${instructionsURL}" target ="_blank">${instructionsURL}</a>`);
         $("#fetchDevices #authenticationInstructions").css("display", "block");
         homebridge.toast.info("Please follow the instructions above and confirm your login.");
         const authenticationSuccessful = await homebridge.request('/exec', { dest: 'waitForAuthentication' });

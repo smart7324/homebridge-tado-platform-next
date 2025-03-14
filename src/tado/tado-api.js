@@ -7,11 +7,12 @@ const fs = require('fs').promises;
 
 const tado_url = "https://my.tado.com";
 const tado_auth_url = "https://login.tado.com/oauth2";
+const tado_client_id = "1bb50063-6b0c-4d11-bd99-387f4a91cc46";
 
 class Tado {
   constructor(name, config, storagePath) {
     this.name = name;
-    const usesExternalTokenFile = config.username.toLowerCase().includes(".json");
+    const usesExternalTokenFile = config.username?.toLowerCase().endsWith(".json");
     this._tadoExternalTokenFilePath = usesExternalTokenFile ? config.username : undefined;
     const fnSimpleHash = (str) => {
       let hash = 0;
@@ -22,21 +23,22 @@ class Tado {
       return (hash >>> 0).toString(36).padStart(7, '0');
     };
     this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join(storagePath, `.tado-token-${fnSimpleHash(config.username)}.json`);
-    this._tadoApiClientId = "1bb50063-6b0c-4d11-bd99-387f4a91cc46";
+    this._tadoApiClientId = tado_client_id;
     this._tadoTokenPromise = undefined;
+    this._tadoAuthenticationCallback = undefined;
     Logger.debug("API successfull initialized", this.name);
   }
 
-  async _getToken() {
+  async getToken() {
     if (!this._tadoTokenPromise) {
-      this._tadoTokenPromise = this._getAuthToken().finally(() => {
+      this._tadoTokenPromise = this._getToken().finally(() => {
         this._tadoTokenPromise = undefined;
       });
     }
     return this._tadoTokenPromise;
   }
 
-  async _getAuthToken() {
+  async _getToken() {
     try {
       if (!this._tadoBearerToken) this._tadoBearerToken = { access_token: undefined, refresh_token: undefined, timestamp: 0 };
       if ((Date.now() - this._tadoBearerToken.timestamp) < 9 * 60 * 1000) return this._tadoBearerToken.access_token;
@@ -111,7 +113,7 @@ class Tado {
     });
     const { device_code, verification_uri_complete } = authResponse.body;
     if (!device_code) throw new Error("Failed to retrieve device code.");
-    Logger.info(`Please open this URL in your browser and confirm the login: ${verification_uri_complete}`);
+    Logger.info(`Please open this URL in your browser, click "submit" and log in to your tado° account: ${verification_uri_complete}`);
     if (this._tadoAuthenticationCallback) this._tadoAuthenticationCallback(verification_uri_complete);
     const maxRetries = 30;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
@@ -164,9 +166,8 @@ class Tado {
   }
 
   async apiCall(path, method = 'GET', data = {}, params = {}, tado_url_dif, blockLog) {
-    Logger.debug('Checking access token..', this.name);
-
-    const access_token = await this._getToken();
+    Logger.debug('Get access token...', this.name);
+    const access_token = await this.getToken();
 
     let tadoLink = tado_url_dif || tado_url;
 
@@ -230,15 +231,19 @@ class Tado {
       instructions = openInBrowserInstructions;
       resolve();
     };
-    await Promise.race([
-      this._getToken(),
-      oPromise
-    ]);
+    try {
+      await Promise.race([
+        this.getToken(),
+        oPromise
+      ]);
+    } finally {
+      this._tadoAuthenticationCallback = undefined;
+    }
     return instructions;
   }
 
   async waitForAuthentication() {
-    await this._getToken();
+    await this.getToken();
     return "Authentication successful!";
   }
 
