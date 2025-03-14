@@ -42,8 +42,8 @@ function TadoPlatform(log, config, api) {
   Logger.init(log, config.debug);
 
   //add deprecated Perms enum values as fakegato-history is still using them
-  api.hap.Perms.WRITE = api.hap.Perms.PAIRED_WRITE;
-  api.hap.Perms.READ = api.hap.Perms.PAIRED_READ;
+  if (!api.hap.Perms.WRITE) api.hap.Perms.WRITE = api.hap.Perms.PAIRED_WRITE;
+  if (!api.hap.Perms.READ) api.hap.Perms.READ = api.hap.Perms.PAIRED_READ;
 
   //init types/fakegato
   CustomTypes.registerWith(api.hap);
