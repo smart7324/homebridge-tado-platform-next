@@ -2,13 +2,16 @@
   <img src="https://github.com/smart7324/homebridge-tado-platform/blob/master/images/tado_logo.png" height="200">
 </p>
 
-# homebridge-tado-platform
+# homebridge-tado-platform-next
 
-[![npm](https://img.shields.io/npm/v/homebridge-tado-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform)
-[![npm](https://img.shields.io/npm/dt/homebridge-tado-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform)
+[![npm](https://img.shields.io/npm/v/homebridge-tado-platform-next.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform-next)
+[![npm](https://img.shields.io/npm/dt/homebridge-tado-platform-next.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform-next)
 [![GitHub last commit](https://img.shields.io/github/last-commit/smart7324/homebridge-tado-platform.svg?style=flat-square)](https://github.com/smart7324/homebridge-tado-platform)
+[![Donate](https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/smart7324)
 
 ## Info
+
+This plugin is forked from [Sedyx (homebridge-tado-platform)](https://github.com/seydx/homebridge-tado-platform)
 
 **TafoPlatform** is possibly the biggest homebridge plugin for Tado devices. 
 
@@ -39,7 +42,7 @@ You can do that and much more with the new version 6. Have Fun!
 
 After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
 
- ```sudo npm install -g homebridge-tado-platform@latest```
+ ```sudo npm install -g homebridge-tado-platform-next@latest```
 
 ## Documentation
 

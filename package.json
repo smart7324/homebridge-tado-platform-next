@@ -1,6 +1,6 @@
 {
   "name": "homebridge-tado-platform-next",
-  "version": "7.3.0",
+  "version": "7.4.0",
   "description": "Homebridge platform plugin providing HomeKit support for tado° devices.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/smart7324/homebridge-tado-platform.git"
   },
-  "author": "smart7324 (https://github.com/smart7324/homebridge-tado-platform/) forked from SeydX (https://github.com/SeydX/homebridge-tado-platform) and ",
+  "author": "smart7324 (https://github.com/smart7324/homebridge-tado-platform) forked from SeydX (https://github.com/SeydX/homebridge-tado-platform)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/smart7324/homebridge-tado-platform/issues"
