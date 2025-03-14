@@ -9,9 +9,11 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/smart7324/homebridge-tado-platform-next.svg?style=flat-square)](https://github.com/smart7324/homebridge-tado-platform-next)
 [![Donate](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/smart7324)
 
-## Info
+## Fork
 
-This plugin is forked from [Sedyx (homebridge-tado-platform)](https://github.com/seydx/homebridge-tado-platform)
+This plugin is forked from [Sedyx (homebridge-tado-platform)](https://github.com/seydx/homebridge-tado-platform). Donate to him: [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&maxAge=2592000)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP4T3KASWQLD8)
+
+## Info
 
 **TafoPlatform** is possibly the biggest homebridge plugin for Tado devices. 
 
