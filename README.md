@@ -23,7 +23,7 @@ The plugin even offers support for multiple houses. So it is finally possible to
 
 **Full HomeKit Support**
 
-Everything Tado offers can be displayed through the plugin in Apple HomeKit. The thermostat buttons themselves have custom characteristics and can even display the air quality for a room. Full hot water support, weather temperature, solar intensity, weather air quality, tado quick actions, child lock, presence lock and much more awaits you with this plugin! 
+Everything Tado offers can be displayed through the plugin in Apple HomeKit. The thermostat buttons themselves have custom characteristics. Full hot water support, weather temperature, solar intensity, weather, tado quick actions, child lock, presence lock and much more awaits you with this plugin! 
 
 
 **History**
@@ -122,7 +122,6 @@ Each zone in the config.json with ``"type": "HEATING"`` and ``"easyMode": false`
 - Curent Temperature
 - Target Temperature
 - Built-in humidity sensor
-- Room Air Quality
 - Separate Humidity (if ``"separateHumidity": true``)
 - Separate Temperature Sensor (if ``"separateTemperature": true``)
 - Battery state (if ``noBattery: false``)
@@ -283,7 +282,7 @@ Each user or anyone sensor in the config.json is exposed to HomeKit as a occupan
 
 ## Weather
 
-Weather settings allow you to display a sensor for temperature, a light bulb (```"accTypeSolarIntensity": "LIGHTBULB"```)  or light sensor (```"accTypeSolarIntensity": "SENSOR"```) for sun intensity, or a sensor for air quality in HomeKit.
+Weather settings allow you to display a sensor for temperature, a light bulb (```"accTypeSolarIntensity": "LIGHTBULB"```)  or light sensor (```"accTypeSolarIntensity": "SENSOR"```) for sun intensity in HomeKit.
 
 ```
 "homes": [
