@@ -1,26 +1,20 @@
 # Changelog
 
-## v7.4.0 - 2025-03-14
-- Fixed minor bugs
-- Improved logging messages and user instructions
-- Final release of fork
+## v7.4.1 - 2025-03-14
+- Updated changelog
 
-## v7.3.0 (internal) - 2025-03-13
+## v7.4.0 - 2025-03-14
+- Implemented the new authentication workflow for the tado° REST API based on their [official instructions](https://support.tado.com/en/articles/8565472-how-do-i-authenticate-to-access-the-rest-api)
+- Added full support for Homebridge v2.0 (it is also shown as compatible when using Homebridge v1.X)
+- Updated all dependencies to their latest version
+- Added new authentication workflow to config-ui
 - Fixed an issue that caused HomeKit from pairing with the bridge (Error: Accessory out of compliance)
 - Fixed an issue where the plugin crashed after startup due to a type error after upgrading got
-
-## v7.2.0 (internal) - 2025-03-13
-- Support new authentication workflow in config-ui
-- Update dependencies
-
-## v7.1.0 (internal)- 2025-03-12
-- Rewrite types for Homebridge v2.0
-- Remove AirQuality feature
-
-## v7.0.0 (internal) - 2025-03-12
-- Add support for Homebridge v2.0
-- Change authentication to new workflow for tado REST API (https://support.tado.com/en/articles/8565472-how-do-i-authenticate-to-access-the-rest-api)
-- Fixed an issue where the current temperature has been set to the target temperature after changing the target temperature
+- Removed AirQuality feature [homebridge-tado-platform/issues/152#issuecomment-2708942491](https://github.com/seydx/homebridge-tado-platform/issues/152#issuecomment-2708942491)
+- Fixed an issue where the current temperature has been set to the target temperature after changing the target temperature through Apple Home
+- Fixed an issue that caused Apple Home from pairing with the bridge (Error: Accessory out of compliance)
+- Fixed an issue where the plugin crashed after startup due to errors after upgrading got
+- Fixed minor bugs
 
 ## v6.0.14 - 2021-05-19
 - Fixed an issue where the thermostat displayed wrong room temperature due to wrong celsius/fahrenheit calculation
