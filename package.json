@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smart7324/homebridge-tado-platform.git"
+    "url": "git+https://github.com/smart7324/homebridge-tado-platform-next.git"
   },
-  "author": "smart7324 (https://github.com/smart7324/homebridge-tado-platform) forked from SeydX (https://github.com/SeydX/homebridge-tado-platform)",
+  "author": "smart7324 (https://github.com/smart7324/homebridge-tado-platform-next) forked from SeydX (https://github.com/SeydX/homebridge-tado-platform)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/smart7324/homebridge-tado-platform/issues"
+    "url": "https://github.com/smart7324/homebridge-tado-platform-next/issues"
   },
-  "homepage": "https://github.com/smart7324/homebridge-tado-platform#readme",
+  "homepage": "https://github.com/smart7324/homebridge-tado-platform-next#readme",
   "keywords": [
     "tado",
     "thermostat",

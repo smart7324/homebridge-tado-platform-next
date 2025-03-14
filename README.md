@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="https://github.com/smart7324/homebridge-tado-platform/blob/master/images/tado_logo.png" height="200">
+  <img src="https://github.com/smart7324/homebridge-tado-platform-next/blob/master/images/tado_logo.png" height="200">
 </p>
 
 # homebridge-tado-platform-next
 
 [![npm](https://img.shields.io/npm/v/homebridge-tado-platform-next.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform-next)
 [![npm](https://img.shields.io/npm/dt/homebridge-tado-platform-next.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform-next)
-[![GitHub last commit](https://img.shields.io/github/last-commit/smart7324/homebridge-tado-platform.svg?style=flat-square)](https://github.com/smart7324/homebridge-tado-platform)
-[![Donate](https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/smart7324)
+[![GitHub last commit](https://img.shields.io/github/last-commit/smart7324/homebridge-tado-platform-next.svg?style=flat-square)](https://github.com/smart7324/homebridge-tado-platform-next)
+[![Donate](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/smart7324)
 
 ## Info
 
@@ -46,7 +46,7 @@ After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
 
 ## Documentation
 
-- [Example config.json](https://github.com/smart7324/homebridge-tado-platform/blob/master/example-config.json)
+- [Example config.json](https://github.com/smart7324/homebridge-tado-platform-next/blob/master/example-config.json)
 - [Non Config Ui X User?](#non-config-ui-x-user)
 - [Configuration](#configuration)
   - [Thermostat](#thermostat)
@@ -109,7 +109,7 @@ If you on HOOBS, you need to reboot the HOOBS server to get your first start con
   ]
 }
 ```
-See [Example Config](https://github.com/smart7324/homebridge-tado-platform/edit/master/example-config.json) for more details
+See [Example Config](https://github.com/smart7324/homebridge-tado-platform-next/edit/master/example-config.json) for more details
 
 ## Configuration
 
@@ -528,8 +528,8 @@ This plugin has been verified to work with the following apps on iOS 14:
 
 You can contribute to this homebridge plugin in following ways:
 
-- [Report issues](https://github.com/smart7324/homebridge-tado-platform/issues) and help verify fixes as they are checked in.
-- Review the [source code changes](https://github.com/smart7324/homebridge-tado-platform/pulls).
+- [Report issues](https://github.com/smart7324/homebridge-tado-platform-next/issues) and help verify fixes as they are checked in.
+- Review the [source code changes](https://github.com/smart7324/homebridge-tado-platform-next/pulls).
 - Contribute bug fixes.
 - Contribute changes to extend the capabilities
 
