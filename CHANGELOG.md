@@ -1,5 +1,8 @@
 # Changelog
 
+## v7.4.2 - 2025-03-16
+- Updated config.schema.json
+
 ## v7.4.1 - 2025-03-14
 - Updated changelog
 
