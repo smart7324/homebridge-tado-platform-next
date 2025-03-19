@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.4.3 - 2025-03-19
+- Updated fakegato-history for Homebridge v2.0 support
+- Removed workaround for missing perms enum values
+
 ## v7.4.2 - 2025-03-16
 - Updated config.schema.json
 
