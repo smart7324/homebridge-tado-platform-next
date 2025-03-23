@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/homebridge-plugins/homebridge-tado/blob/master/images/tado_logo.png" height="200">
+  <img src="https://github.com/homebridge-plugins/homebridge-tado/blob/latest/images/tado_logo.png?raw=true" height="200">
 </p>
 
 # homebridge-tado
@@ -50,7 +50,7 @@ After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
 
 ## Documentation
 
-- [Example config.json](https://github.com/homebridge-plugins/homebridge-tado/blob/master/example-config.json)
+- [Example config.json](https://github.com/homebridge-plugins/homebridge-tado/blob/latest/example-config.json)
 - [Non Config Ui X User?](#non-config-ui-x-user)
 - [Configuration](#configuration)
   - [Thermostat](#thermostat)
@@ -115,7 +115,7 @@ If you on HOOBS, you need to reboot the HOOBS server to get your first start con
   ]
 }
 ```
-See [Example Config](https://github.com/homebridge-plugins/homebridge-tado/edit/master/example-config.json) for more details
+See [Example Config](https://github.com/homebridge-plugins/homebridge-tado/edit/latest/example-config.json) for more details
 
 ## Configuration
 
