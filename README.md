@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://github.com/SeydX/homebridge-tado-platform/blob/master/images/tado_logo.png" height="200">
+  <img src="https://github.com/homebridge-plugins/homebridge-tado/blob/master/images/tado_logo.png" height="200">
 </p>
 
-# homebridge-tado-platform
+# homebridge-tado
 
-[![npm](https://img.shields.io/npm/v/homebridge-tado-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform)
-[![npm](https://img.shields.io/npm/dt/homebridge-tado-platform.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform)
-[![GitHub last commit](https://img.shields.io/github/last-commit/SeydX/homebridge-tado-platform.svg?style=flat-square)](https://github.com/SeydX/homebridge-tado-platform)
+[![npm](https://img.shields.io/npm/v/@homebridge-plugins/homebridge-tado.svg?style=flat-square)](https://www.npmjs.com/package/@homebridge-plugins/homebridge-tado)
+[![npm](https://img.shields.io/npm/dt/@homebridge-plugins/homebridge-tado.svg?style=flat-square)](https://www.npmjs.com/package/@homebridge-plugins/homebridge-tado)
+[![GitHub last commit](https://img.shields.io/github/last-commit/homebridge-plugins/homebridge-tado.svg?style=flat-square)](https://github.com/homebridge-plugins/homebridge-tado)
 [![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 [![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=discord)](https://discord.gg/kqNCe2D)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&maxAge=2592000)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP4T3KASWQLD8)
@@ -46,11 +46,11 @@ You can do that and much more with the new version 6. Have Fun!
 
 After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
 
- ```sudo npm install -g homebridge-tado-platform@latest```
+ ```sudo npm install -g @homebridge-plugins/homebridge-tado@latest```
 
 ## Documentation
 
-- [Example config.json](https://github.com/SeydX/homebridge-tado-platform/blob/master/example-config.json)
+- [Example config.json](https://github.com/homebridge-plugins/homebridge-tado/blob/master/example-config.json)
 - [Non Config Ui X User?](#non-config-ui-x-user)
 - [Configuration](#configuration)
   - [Thermostat](#thermostat)
@@ -115,7 +115,7 @@ If you on HOOBS, you need to reboot the HOOBS server to get your first start con
   ]
 }
 ```
-See [Example Config](https://github.com/SeydX/homebridge-tado-platform/edit/master/example-config.json) for more details
+See [Example Config](https://github.com/homebridge-plugins/homebridge-tado/edit/master/example-config.json) for more details
 
 ## Configuration
 
@@ -543,8 +543,8 @@ This plugin has been verified to work with the following apps on iOS 14:
 
 You can contribute to this homebridge plugin in following ways:
 
-- [Report issues](https://github.com/SeydX/homebridge-tado-platform/issues) and help verify fixes as they are checked in.
-- Review the [source code changes](https://github.com/SeydX/homebridge-tado-platform/pulls).
+- [Report issues](https://github.com/homebridge-plugins/homebridge-tado/issues) and help verify fixes as they are checked in.
+- Review the [source code changes](https://github.com/homebridge-plugins/homebridge-tado/pulls).
 - Contribute bug fixes.
 - Contribute changes to extend the capabilities
 

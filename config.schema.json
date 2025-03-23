@@ -3,7 +3,7 @@
   "pluginType": "platform",
   "singular": true,
   "customUi": true,
-  "footerDisplay": "For documentation please see [GitHub repository](https://github.com/SeydX/homebridge-tado-platform)",
+  "footerDisplay": "For documentation please see [GitHub repository](https://github.com/homebridge-plugins/homebridge-tado)",
   "schema": {
     "name": {
       "title": "Name",
@@ -412,7 +412,7 @@
                       "title": "Timer",
                       "enum": [
                         "TIMER"
-                      ]                      
+                      ]
                     },
                     {
                       "title": "Custom",
@@ -420,9 +420,9 @@
                         "CUSTOM"
                       ]
                     }
-                  ],                  
+                  ],
                   "description": "Mode for the commands to be sent with. can be 'MANUAL' for manual control until ended by the user, 'AUTO' for manual control until next schedule change in tado° app, 'TIMER' for manual control until timer ends or 'CUSTOM' for a mixed use of MANUAL (off) and AUTO (on). (CUSTOM is only for HEATING types with easyMode enabled and HOT_WATER types with temperature support)."
-                },                
+                },
                 "modeTimer": {
                   "title": "Timer",
                   "description": "Timer for the manual mode in minutes.",

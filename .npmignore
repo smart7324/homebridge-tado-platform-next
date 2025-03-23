@@ -61,3 +61,6 @@ demo
 example-config.json
 .prettierrc.json
 .eslintrc.js
+
+# IntelliJ
+.idea

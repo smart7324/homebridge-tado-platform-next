@@ -1,7 +1,7 @@
 {
-  "name": "homebridge-tado-platform",
+  "name": "@homebridge-plugins/homebridge-tado",
   "version": "6.0.14",
-  "description": "homebridge-tado-platform",
+  "description": "Homebridge plugin for controlling Tado devices",
   "main": "index.js",
   "funding": [
     {
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SeydX/homebridge-tado-platform.git"
+    "url": "git+https://github.com/homebridge-plugins/homebridge-tado.git"
   },
-  "author": "SeydX (https://github.com/SeydX/homebridge-tado-platform)",
+  "author": "SeydX (https://github.com/homebridge-plugins/homebridge-tado)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SeydX/homebridge-tado-platform/issues"
+    "url": "https://github.com/homebridge-plugins/homebridge-tado/issues"
   },
-  "homepage": "https://github.com/SeydX/homebridge-tado-platform#readme",
+  "homepage": "https://github.com/homebridge-plugins/homebridge-tado#readme",
   "keywords": [
     "tado",
     "thermostat",

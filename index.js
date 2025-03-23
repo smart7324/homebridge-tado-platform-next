@@ -1,7 +1,7 @@
 /**
  * v6
  *
- * @url https://github.com/SeydX/homebridge-tado-platform
+ * @url https://github.com/homebridge-plugins/homebridge-tado
  * @author SeydX <seyd55@outlook.de>
  *
  **/
@@ -10,5 +10,5 @@
 
 module.exports = function (homebridge) {
   let TadoPlatform = require('./src/platform.js')(homebridge);
-  homebridge.registerPlatform('homebridge-tado-platform', 'TadoPlatform', TadoPlatform, true);
+  homebridge.registerPlatform('@homebridge-plugins/homebridge-tado', 'TadoPlatform', TadoPlatform, true);
 };
