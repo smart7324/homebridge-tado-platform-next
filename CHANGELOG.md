@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.5.0 - 2025-03-25
+- Converted package to ES module
+- Activated eslint
+- Updated dependencies
+- Added account name to authentication url message
+- Dropped support for node 18 due to got
+
 ## v7.4.3 - 2025-03-19
 - Updated fakegato-history for Homebridge v2.0 support
 - Removed workaround for missing perms enum values
