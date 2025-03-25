@@ -1,12 +1,9 @@
-'use strict';
-
-const Logger = require('../helper/logger.js');
-
-const moment = require('moment');
+import Logger from '../helper/logger.js';
+import moment from 'moment';
 
 const timeout = (ms) => new Promise((res) => setTimeout(res, ms));
 
-class HeaterCoolerAccessory {
+export default class HeaterCoolerAccessory {
   constructor(api, accessory, accessories, tado, deviceHandler, FakeGatoHistoryService) {
     this.api = api;
     this.accessory = accessory;
@@ -320,5 +317,3 @@ class HeaterCoolerAccessory {
     }, 10 * 60 * 1000);
   }
 }
-
-module.exports = HeaterCoolerAccessory;

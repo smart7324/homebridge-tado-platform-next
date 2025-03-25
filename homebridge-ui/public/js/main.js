@@ -1,4 +1,4 @@
-/*global $, window, homebridge, fetchDevicesBar, schema*/
+/*global $, homebridge, fetchDevicesBar, schema*/
 
 const pageNavigation = {
   currentContent: false,

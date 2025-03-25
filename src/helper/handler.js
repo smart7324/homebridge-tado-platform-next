@@ -1,15 +1,12 @@
-'use strict';
-
-const Logger = require('../helper/logger.js');
-
-const moment = require('moment');
+import Logger from '../helper/logger.js';
+import moment from 'moment';
 
 var settingState = false;
 var delayTimer = {};
 
 const timeout = (ms) => new Promise((res) => setTimeout(res, ms));
 
-module.exports = (api, accessories, config, tado, telegram) => {
+export default (api, accessories, config, tado, telegram) => {
   async function setStates(accessory, accs, target, value) {
     accessories = accs.filter((acc) => acc && acc.context.config.homeName === config.homeName);
 

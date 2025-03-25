@@ -1,6 +1,5 @@
-'use strict';
 
-module.exports = {
+export default {
   registerWith: function (hap) {
     const { Characteristic, Service, Formats, Perms, Units } = hap;
 

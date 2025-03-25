@@ -6,9 +6,9 @@
  *
  **/
 
-'use strict';
+import TadoPlatformModule from './src/platform.js';
 
-module.exports = function (homebridge) {
-  let TadoPlatform = require('./src/platform.js')(homebridge);
+export default function (homebridge) {
+  let TadoPlatform = TadoPlatformModule(homebridge);
   homebridge.registerPlatform('homebridge-tado-platform', 'TadoPlatform', TadoPlatform, true);
 };

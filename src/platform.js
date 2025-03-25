@@ -1,34 +1,33 @@
-'use strict';
+import DeviceHandler from './helper/handler.js';
+import Logger from './helper/logger.js';
+import packageFile from '../package.json';
+import TadoConfig from './tado/tado-config.js';
+import fakeGatoHistory from 'fakegato-history';
 
-const DeviceHandler = require('./helper/handler.js');
-const Logger = require('./helper/logger.js');
-const packageFile = require('../package.json');
-const TadoConfig = require('./tado/tado-config.js');
+// Accessories
+import ContactAccessory from './accessories/contact.js';
+import FaucetAccessory from './accessories/faucet.js';
+import HeaterCoolerAccessory from './accessories/heatercooler.js';
+import HumidityAccessory from './accessories/humidity.js';
+import MotionAccessory from './accessories/motion.js';
+import OccupancyAccessory from './accessories/occupancy.js';
+import SecurityAccessory from './accessories/security.js';
+import SolarLightbulbAccessory from './accessories/lightbulb.js';
+import SolarLightsensorAccessory from './accessories/lightsensor.js';
+import SwitchAccessory from './accessories/switch.js';
+import TemperatureAccessory from './accessories/temperature.js';
+import ThermostatAccessory from './accessories/thermostat.js';
 
-//Accessories
-const ContactAccessory = require('./accessories/contact.js');
-const FaucetAccessory = require('./accessories/faucet.js');
-const HeaterCoolerAccessory = require('./accessories/heatercooler.js');
-const HumidityAccessory = require('./accessories/humidity.js');
-const MotionAccessory = require('./accessories/motion.js');
-const OccupancyAccessory = require('./accessories/occupancy.js');
-const SecurityAccessory = require('./accessories/security.js');
-const SolarLightbulbAccessory = require('./accessories/lightbulb.js');
-const SolarLightsensorAccessory = require('./accessories/lightsensor.js');
-const SwitchAccessory = require('./accessories/switch.js');
-const TemperatureAccessory = require('./accessories/temperature.js');
-const ThermostatAccessory = require('./accessories/thermostat.js');
-
-//Custom Types
-const CustomTypes = require('./types/custom.js');
-const EveTypes = require('./types/eve.js');
+// Custom Types
+import CustomTypes from './types/custom.js';
+import EveTypes from './types/eve.js';
 
 const PLUGIN_NAME = 'homebridge-tado-platform';
 const PLATFORM_NAME = 'TadoPlatform';
 
 var Accessory, UUIDGen, FakeGatoHistoryService;
 
-module.exports = function (homebridge) {
+export default function (homebridge) {
   Accessory = homebridge.platformAccessory;
   UUIDGen = homebridge.hap.uuid;
 
@@ -44,7 +43,7 @@ function TadoPlatform(log, config, api) {
   //init types/fakegato
   CustomTypes.registerWith(api.hap);
   EveTypes.registerWith(api.hap);
-  FakeGatoHistoryService = require('fakegato-history')(api);
+  FakeGatoHistoryService = fakeGatoHistory(api);
 
   this.api = api;
   this.accessories = [];

@@ -1,15 +1,14 @@
-'use strict';
 
-const Logger = require('../helper/logger.js');
-const got = require('got').default;
-const path = require('path');
-const fs = require('fs').promises;
+import Logger from '../helper/logger.js';
+import got from 'got';
+import path from 'path';
+import fs from 'fs/promises';
 
 const tado_url = "https://my.tado.com";
 const tado_auth_url = "https://login.tado.com/oauth2";
 const tado_client_id = "1bb50063-6b0c-4d11-bd99-387f4a91cc46";
 
-class Tado {
+export default class Tado {
   constructor(name, config, storagePath) {
     this.name = name;
     const usesExternalTokenFile = config.username?.toLowerCase().endsWith(".json");
@@ -61,6 +60,7 @@ class Tado {
       await fs.access(this._tadoInternalTokenFilePath);
       const refresh_token = await this._retrieveRefreshTokenFromInternalFile();
       return this._refreshToken(refresh_token);
+
     } catch (_err) {
       return this._authenticateUser();
     }
@@ -129,11 +129,11 @@ class Tado {
           },
           responseType: "json"
         });
-      } catch (error) {
+      } catch (_error) {
         //authentication still pending -> response code 400
       }
       if (tokenResponse?.body) {
-        const { access_token, refresh_token } = tokenResponse?.body;
+        const { access_token, refresh_token } = tokenResponse.body;
         if (access_token) {
           await fs.writeFile(this._tadoInternalTokenFilePath, JSON.stringify({ access_token, refresh_token }));
           this._tadoBearerToken = { access_token, refresh_token, timestamp: Date.now() };
@@ -536,5 +536,3 @@ class Tado {
     return this.apiCall(`/v1/homes/${home_id}/runningTimes`, 'GET', {}, period, 'https://minder.tado.com', false);
   }
 }
-
-module.exports = Tado;

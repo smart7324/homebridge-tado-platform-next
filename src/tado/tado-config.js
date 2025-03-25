@@ -1,10 +1,7 @@
-'use strict';
-
-const fs = require('fs-extra');
-
-const Logger = require('../helper/logger.js');
-const TadoApi = require('./tado-api.js');
-const Telegram = require('../helper/telegram');
+import fs from 'fs-extra';
+import Logger from '../helper/logger.js';
+import TadoApi from './tado-api.js';
+import Telegram from '../helper/telegram';
 
 //https://stackoverflow.com/a/15710692
 const hashCode = (s) =>
@@ -20,7 +17,7 @@ const deviceHandler = new Map();
 
 let telegram;
 
-module.exports = {
+export default {
   add: async function (config, credentials, storagePath) {
     config.homes = config.homes || [];
 

@@ -1,7 +1,5 @@
-const { HomebridgePluginUiServer } = require('@homebridge/plugin-ui-utils');
-const { RequestError } = require('@homebridge/plugin-ui-utils');
-
-const TadoApi = require('../src/tado/tado-api.js');
+import { HomebridgePluginUiServer, RequestError } from '@homebridge/plugin-ui-utils';
+import TadoApi from '../src/tado/tado-api.js';
 
 class UiServer extends HomebridgePluginUiServer {
   constructor() {
