@@ -1,6 +1,6 @@
 import DeviceHandler from './helper/handler.js';
 import Logger from './helper/logger.js';
-import packageFile from '../package.json';
+import packageFile from '../package.json' with { type: 'json' };
 import TadoConfig from './tado/tado-config.js';
 import fakeGatoHistory from 'fakegato-history';
 
