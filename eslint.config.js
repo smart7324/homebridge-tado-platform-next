@@ -2,12 +2,21 @@ import { defineConfig } from "eslint/config";
 import globals from "globals";
 import js from "@eslint/js";
 import prettier from "eslint-plugin-prettier";
+import babelParser from "@babel/eslint-parser";
 
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
     plugins: {
       prettier,
+    },
+    languageOptions: {
+      parser: babelParser,
+      parserOptions: {
+        ecmaVersion: 2023,
+        sourceType: "module",
+        requireConfigFile: false
+      },
     },
     rules: {
       "no-unused-vars": [
