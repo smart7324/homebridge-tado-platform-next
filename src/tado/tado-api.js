@@ -22,6 +22,7 @@ class Tado {
       }
       return (hash >>> 0).toString(36).padStart(7, '0');
     };
+    this.username = usesExternalTokenFile ? undefined : config.username;
     this._tadoInternalTokenFilePath = usesExternalTokenFile ? undefined : path.join(storagePath, `.tado-token-${fnSimpleHash(config.username)}.json`);
     this._tadoApiClientId = tado_client_id;
     this._tadoTokenPromise = undefined;
@@ -113,7 +114,7 @@ class Tado {
     });
     const { device_code, verification_uri_complete } = authResponse.body;
     if (!device_code) throw new Error("Failed to retrieve device code.");
-    Logger.info(`Please open this URL in your browser, click "submit" and log in to your tado° account: ${verification_uri_complete}`);
+    Logger.info(`Open the following URL in your browser, click "submit" and log in to your tado° account "${this.username}": ${verification_uri_complete}`);
     if (this._tadoAuthenticationCallback) this._tadoAuthenticationCallback(verification_uri_complete);
     const maxRetries = 30;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
