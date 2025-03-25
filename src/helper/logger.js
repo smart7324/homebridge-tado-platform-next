@@ -1,4 +1,3 @@
-
 var log = console;
 var debugMode = false;
 

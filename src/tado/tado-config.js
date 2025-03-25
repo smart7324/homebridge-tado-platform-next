@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import Logger from '../helper/logger.js';
 import TadoApi from './tado-api.js';
-import Telegram from '../helper/telegram';
+import Telegram from '../helper/telegram.js';
 
 //https://stackoverflow.com/a/15710692
 const hashCode = (s) =>
