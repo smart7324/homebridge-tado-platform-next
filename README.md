@@ -1,17 +1,18 @@
 <p align="center">
-  <img src="https://github.com/smart7324/homebridge-tado-platform-next/blob/master/images/tado_logo.png" height="200">
+  <img src="https://github.com/homebridge-plugins/homebridge-tado/blob/latest/images/tado_logo.png?raw=true" height="200">
 </p>
 
-# homebridge-tado-platform-next
+# homebridge-tado
 
-[![npm](https://img.shields.io/npm/v/homebridge-tado-platform-next.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform-next)
-[![npm](https://img.shields.io/npm/dt/homebridge-tado-platform-next.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-tado-platform-next)
-[![GitHub last commit](https://img.shields.io/github/last-commit/smart7324/homebridge-tado-platform-next.svg?style=flat-square)](https://github.com/smart7324/homebridge-tado-platform-next)
+[![npm](https://img.shields.io/npm/v/@homebridge-plugins/homebridge-tado.svg?style=flat-square)](https://www.npmjs.com/package/@homebridge-plugins/homebridge-tado)
+[![npm](https://img.shields.io/npm/dt/@homebridge-plugins/homebridge-tado.svg?style=flat-square)](https://www.npmjs.com/package/@homebridge-plugins/homebridge-tado)
+[![GitHub last commit](https://img.shields.io/github/last-commit/homebridge-plugins/homebridge-tado.svg?style=flat-square)](https://github.com/homebridge-plugins/homebridge-tado)
+[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 [![Donate](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/smart7324)
 
 ## Fork
 
-This plugin is forked from [Sedyx (homebridge-tado-platform)](https://github.com/seydx/homebridge-tado-platform). Donate to him: [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&maxAge=2592000)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP4T3KASWQLD8)
+This plugin is originally created by [Sedyx](https://github.com/seydx/). Donate to him: [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&maxAge=2592000)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP4T3KASWQLD8)
 
 ## Info
 
@@ -44,11 +45,11 @@ You can do that and much more with the new version 6. Have Fun!
 
 After [Homebridge](https://github.com/nfarina/homebridge) has been installed:
 
- ```sudo npm install -g homebridge-tado-platform-next@latest```
+ ```sudo npm install -g @homebridge-plugins/homebridge-tado@latest```
 
 ## Documentation
 
-- [Example config.json](https://github.com/smart7324/homebridge-tado-platform-next/blob/master/example-config.json)
+- [Example config.json](https://github.com/homebridge-plugins/homebridge-tado/blob/latest/example-config.json)
 - [Non Config Ui X User?](#non-config-ui-x-user)
 - [Configuration](#configuration)
   - [Thermostat](#thermostat)
@@ -111,7 +112,7 @@ If you on HOOBS, you need to reboot the HOOBS server to get your first start con
   ]
 }
 ```
-See [Example Config](https://github.com/smart7324/homebridge-tado-platform-next/edit/master/example-config.json) for more details
+See [Example Config](https://github.com/homebridge-plugins/homebridge-tado/edit/latest/example-config.json) for more details
 
 ## Configuration
 
@@ -529,8 +530,8 @@ This plugin has been verified to work with the following apps on iOS 14:
 
 You can contribute to this homebridge plugin in following ways:
 
-- [Report issues](https://github.com/smart7324/homebridge-tado-platform-next/issues) and help verify fixes as they are checked in.
-- Review the [source code changes](https://github.com/smart7324/homebridge-tado-platform-next/pulls).
+- [Report issues](https://github.com/homebridge-plugins/homebridge-tado/issues) and help verify fixes as they are checked in.
+- Review the [source code changes](https://github.com/homebridge-plugins/homebridge-tado/pulls).
 - Contribute bug fixes.
 - Contribute changes to extend the capabilities
 

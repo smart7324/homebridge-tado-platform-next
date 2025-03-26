@@ -22,7 +22,7 @@ import ThermostatAccessory from './accessories/thermostat.js';
 import CustomTypes from './types/custom.js';
 import EveTypes from './types/eve.js';
 
-const PLUGIN_NAME = 'homebridge-tado-platform';
+const PLUGIN_NAME = '@homebridge-plugins/homebridge-tado';
 const PLATFORM_NAME = 'TadoPlatform';
 
 var Accessory, UUIDGen, FakeGatoHistoryService;

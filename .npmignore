@@ -59,4 +59,10 @@ yarn.lock
 .vscode
 demo
 example-config.json
+
 eslint.config.js
+.prettierrc.json
+.eslintrc.js
+
+# IntelliJ
+.idea

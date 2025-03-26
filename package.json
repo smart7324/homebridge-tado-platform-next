@@ -1,7 +1,7 @@
 {
-  "name": "homebridge-tado-platform-next",
+  "name": "@homebridge-plugins/homebridge-tado",
   "version": "7.5.1",
-  "description": "Homebridge platform plugin providing HomeKit support for tado° devices.",
+  "description": "Homebridge plugin for controlling tado° devices.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix ."
@@ -9,14 +9,14 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smart7324/homebridge-tado-platform-next.git"
+    "url": "git+https://github.com/homebridge-plugins/homebridge-tado.git"
   },
-  "author": "smart7324 (https://github.com/smart7324/homebridge-tado-platform-next) forked from SeydX (https://github.com/SeydX/homebridge-tado-platform)",
+  "author": "maintained by smart7324 (https://github.com/smart7324/) - author SeydX (https://github.com/SeydX/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/smart7324/homebridge-tado-platform-next/issues"
+    "url": "https://github.com/homebridge-plugins/homebridge-tado/issues"
   },
-  "homepage": "https://github.com/smart7324/homebridge-tado-platform-next#readme",
+  "homepage": "https://github.com/homebridge-plugins/homebridge-tado#readme",
   "keywords": [
     "tado",
     "thermostat",

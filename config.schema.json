@@ -3,7 +3,7 @@
   "pluginType": "platform",
   "singular": true,
   "customUi": true,
-  "footerDisplay": "For documentation please see [GitHub repository](https://github.com/smart7324/homebridge-tado-platform-next)",
+  "footerDisplay": "For documentation please see [GitHub repository](https://github.com/homebridge-plugins/homebridge-tado)",
   "schema": {
     "type": "object",
     "properties": {
