@@ -1,5 +1,8 @@
 # Changelog
 
+## v7.5.1 - 2025-03-26
+- Fixed package.json required node version
+
 ## v7.5.0 - 2025-03-25
 - Converted package to ES module
 - Activated eslint
