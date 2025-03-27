@@ -1,5 +1,9 @@
 # Changelog
 
+## v7.5.2 - 2025-03-27
+!IMPORTANT! Move back to original plugin.
+I got access to the old repository of seydx, so we will move back to the original plugin, which is now published under the @homebridge-plugins scope. Please note, that this fork won't be maintained any longer. See https://github.com/smart7324/homebridge-tado-platform-next/issues/1#issuecomment-2758683531 for more information.
+
 ## v7.5.1 - 2025-03-26
 - Fixed package.json required node version
 
